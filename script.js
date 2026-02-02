@@ -13,10 +13,11 @@ switch (lang) {
     default: console.log(weekDaysEn);
 }
 
-let weekDaysArr = [];
-weekDaysArr[0] = weekDaysRu.split(',');
-weekDaysArr[1] = weekDaysEn.split(',');
-console.log(weekDaysArr[lang == 'ru' ? 0 : 1])
+let weekDaysArr = [
+    weekDaysRu.split(','),
+    weekDaysEn.split(',')
+];
+console.log(weekDaysArr[+!(lang == 'ru')])
 
 const namePerson = 'Артем';
 namePerson == 'Артем' ? console.log('директор') :
