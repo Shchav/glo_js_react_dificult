@@ -17,7 +17,7 @@ const weekDaysArr = [
     weekDaysRu.split(','),
     weekDaysEn.split(',')
 ];
-console.log(weekDaysArr[+!(lang == 'ru')])
+console.log(weekDaysArr[+(lang != 'ru')])
 
 const namePerson = 'Артем';
 namePerson == 'Артем' ? console.log('директор') :
