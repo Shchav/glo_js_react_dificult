@@ -13,7 +13,7 @@ switch (lang) {
     default: console.log(weekDaysEn);
 }
 
-let weekDaysArr = [
+const weekDaysArr = [
     weekDaysRu.split(','),
     weekDaysEn.split(',')
 ];
