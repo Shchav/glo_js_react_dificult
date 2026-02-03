@@ -1,26 +1,29 @@
-const lang = 'ru';
-const weekDaysRu = 'Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье';
-const weekDaysEn = 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday';
+'use strict'
 
-if (lang == 'ru') console.log(weekDaysRu);
-else console.log(weekDaysEn);
-
-switch (lang) {
-    case "ru": {
-        console.log(weekDaysRu);
-        break;
+const func = function (str) {
+    if (typeof str != 'string') {
+        console.log('Переданный параметр не является строкой');
+        return;
     }
-    default: console.log(weekDaysEn);
+
+    if (str[0] == ' ')
+        str = func(str.slice(1));
+    else if (str[str.length - 1] == ' ')
+        str = func(str.slice(0, -1));
+
+    const maxLength = 30;
+    if (str.length > maxLength) {
+        str = str.substr(0, maxLength) + '...';
+    }
+
+    return str;
 }
 
-const weekDaysArr = [
-    weekDaysRu.split(','),
-    weekDaysEn.split(',')
-];
-console.log(weekDaysArr[+(lang != 'ru')])
-
-const namePerson = 'Артем';
-namePerson == 'Артем' ? console.log('директор') :
-    namePerson == 'Александр' ? console.log('преподаватель') : console.log('студент');
-
+func(123);
+console.log(func("             Lorem ipsum dolor sit amet, consectetur \
+    adipisicing elit.Ipsum placeat, omnis amet veniam, nemo \
+    doloremque ab illum dolor qui quos nobis repudiandae quibusdam \
+    est.Architecto similique porro quod dolor enim.Commodi quis \
+    neque voluptatibus dicta cumque illo ratione corrupti deleniti.     "));
+console.log('\'', func("             Lorem ipsum                   ") + '\'');
 
