@@ -1,15 +1,21 @@
 'use strict'
 
 const func = function (str) {
+
+    const trimStartEndStr = function (str) {
+        if (str[0] == ' ')
+            str = trimStartEndStr(str.slice(1));
+        else if (str[str.length - 1] == ' ')
+            str = trimStartEndStr(str.slice(0, -1));
+        return str;
+    }
+
     if (typeof str != 'string') {
         console.log('Переданный параметр не является строкой');
         return;
     }
 
-    if (str[0] == ' ')
-        str = func(str.slice(1));
-    else if (str[str.length - 1] == ' ')
-        str = func(str.slice(0, -1));
+    str = trimStartEndStr(str);
 
     const maxLength = 30;
     if (str.length > maxLength) {
