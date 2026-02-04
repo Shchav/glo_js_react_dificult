@@ -1,36 +1,29 @@
 'use strict'
 
-const func = function (str) {
+const isNumber = function (num) {
+    return !!num && isFinite(num) && !num.includes(' ');
+}
+console.log(isNumber('aaa 123 aaa'));
+console.log(isNumber(' 123 aaa '));
+console.log(isNumber(' aaa 123 '));
+console.log(isNumber('   123   '));
+console.log(isNumber('   123'));
+console.log(isNumber('123   '));
+console.log(isNumber('      '));
+console.log(isNumber(null));
+console.log(isNumber('123'));
 
-    const trimStartEndStr = function (str) {
-        const trimStartEndChar = ' ';
-
-        if (str[0] == trimStartEndChar)
-            str = trimStartEndStr(str.slice(1));
-        else if (str[str.length - 1] == trimStartEndChar)
-            str = trimStartEndStr(str.slice(0, -1));
-        return str;
-    }
-
-    if (typeof str != 'string') {
-        console.log('Переданный параметр не является строкой');
-        return;
-    }
-
-    str = trimStartEndStr(str);
-
-    const maxLength = 30;
-    if (str.length > maxLength) {
-        str = str.substr(0, maxLength) + '...';
-    }
-
-    return str;
+let arr = [];
+for (let i = 0; i < 7; i++) {
+    arr[i] = Math.random() * 10 + '';
+}
+for (let i = 0; i < 7; i++) {
+    if (arr[i][0] == '2' || arr[i][0] == '4')
+        console.log(arr[i])
 }
 
-func(123);
-console.log('\'' + func("             Lorem ipsum dolor sit amet, consectetur \
-    adipisicing elit.Ipsum placeat, omnis amet veniam, nemo \
-    doloremque ab illum dolor qui quos nobis repudiandae quibusdam \
-    est.Architecto similique porro quod dolor enim.Commodi quis \
-    neque voluptatibus dicta cumque illo ratione corrupti deleniti.     ") + '\'');
-console.log('\'' + func("             Lorem ipsum                   ") + '\'');
+for (let i = 2; i <= 100; i++) {
+    for (var t = 2; t < i; t++)
+        if (!(i % t)) break;
+    if (t == i) console.log(i);
+}
