@@ -4,6 +4,7 @@ const func = function (str) {
 
     const trimStartEndStr = function (str) {
         const trimStartEndChar = ' ';
+
         if (str[0] == trimStartEndChar)
             str = trimStartEndStr(str.slice(1));
         else if (str[str.length - 1] == trimStartEndChar)
