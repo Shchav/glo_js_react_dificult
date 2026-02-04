@@ -26,10 +26,10 @@ const func = function (str) {
 }
 
 func(123);
-console.log(func("             Lorem ipsum dolor sit amet, consectetur \
+console.log('\'' + func("             Lorem ipsum dolor sit amet, consectetur \
     adipisicing elit.Ipsum placeat, omnis amet veniam, nemo \
     doloremque ab illum dolor qui quos nobis repudiandae quibusdam \
     est.Architecto similique porro quod dolor enim.Commodi quis \
-    neque voluptatibus dicta cumque illo ratione corrupti deleniti.     "));
-console.log('\'', func("             Lorem ipsum                   ") + '\'');
-
+    neque voluptatibus dicta cumque illo ratione corrupti deleniti.     ") + '\'');
+// console.log('\'', func("             Lorem ipsum                   ") + '\'');
+console.log('\'' + func("             Lorem ipsum                   ") + '\'');
