@@ -31,5 +31,4 @@ console.log('\'' + func("             Lorem ipsum dolor sit amet, consectetur \
     doloremque ab illum dolor qui quos nobis repudiandae quibusdam \
     est.Architecto similique porro quod dolor enim.Commodi quis \
     neque voluptatibus dicta cumque illo ratione corrupti deleniti.     ") + '\'');
-// console.log('\'', func("             Lorem ipsum                   ") + '\'');
 console.log('\'' + func("             Lorem ipsum                   ") + '\'');
