@@ -69,10 +69,14 @@ const DomElement = function (selector) {
     createElem.call(this, selector);
 }
 
-square = new DomElement('.square').setWidth(100).setHeight(100).
-    setFontsize(14).setBackground('#AAAAAA').setPosition('absolute');
+let square;
+document.addEventListener('DOMContentLoaded', () => {
+    square = new DomElement('.square').setWidth(100).setHeight(100).
+        setFontsize(14).setBackground('#AAAAAA').setPosition('absolute');
+});
 
 document.addEventListener('keydown', event => {
+    if (!square) return;
     const step = 10; // px
     if (event.key === 'ArrowLeft') {
         square.element().style.left = parseInt(square.element().style.left) - step + 'px';
@@ -85,8 +89,3 @@ document.addEventListener('keydown', event => {
     }
 })
 
-// new DomElement('.block').setWidth(50).setHeight(20).
-//     setFontsize(14).setBackground('#AAAAAA').setText('Привет');
-
-
-// square.setCSS('height: 100px; width: 100px; position: absolute; background: #AAAAAA');
