@@ -230,13 +230,6 @@ const appData = {
         screens[screens.length - 1].after(cloneScreen);
     },
 
-    prompting: function (message, defaultInput, mustBeText) {
-        do {
-            var input = prompt(message, defaultInput);
-        } while (mustBeText == this.isNumber(input));
-        return input;
-    },
-
     addPrices: function () {
         this.screenPrice = 0;
         this.countScreens = 0;
